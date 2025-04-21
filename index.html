@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Introducing Taiwan</title>
+    <link rel="shortcut icon" href="img/TaiwanIcon.png" type="image/x-icon">
+    <link rel="stylesheet" href="plugin/theme.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="d-flex flex-row align-items-center container py-2 h-100">
+        <img src="img/TaiwanIcon.png" alt="" width="30">
+        <h1 class="blue fw-bold m-0">Hello UK</h1>
+        <div class="d-flex flex-row gap-4 ms-auto">
+            <button type="button" class="btn-custom"><a href="#buildings" style="text-decoration: none;color: white">Building</a>
+            </button>
+            <button type="button" class="btn-custom"><a href="#attractions" style="text-decoration: none;color: white">Attractions</a>
+            </button>
+            <button type="button" class="btn-custom"><a href="#foods"style="text-decoration: none;color: white">Foods</a></button>
+            <button type="button" class="btn-custom"><a href="#position" style="text-decoration: none;color: white">Position</a>
+            </button>
+        </div>
+    </div>
+</header>
+
+<main id="index">
+    <div style="color: white;background-color: var(--blue)">
+        <div class="container d-flex flex-column align-items-center">
+            <h2 class="fw-bold mt-5 scroll-down" id="buildings">Buildings</h2>
+            <div class="my-4"></div>
+            <div style="display: grid;grid-template-columns: repeat(auto-fill,minmax(425px,1fr)); gap: 2rem">
+
+                <div class="d-flex flex-column gap-2 scroll-down" v-for="data in buildings" @click="openDialog(data)">
+                    <img :src="data.img" alt="" class="rounded" style="min-height: 421px">
+                    <div class="d-flex flex-row justify-content-between align-items-center">
+                        <p style="font-size: 20px;max-width: 340px" class="text-truncate m-0">{{data.title}}</p>
+                        <button type="button" class="btn btn-light rounded-pill px-4" @click.stop="goMap(data.url)">Go
+                            Map
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="my-3"></div>
+        </div>
+    </div>
+
+    <div style="color: var(--blue);background-color: white">
+        <div class="container d-flex flex-column align-items-center">
+            <h2 class="fw-bold mt-5 scroll-down" id="attractions">Attractions</h2>
+            <div class="my-4"></div>
+            <div style="display: grid;grid-template-columns: repeat(auto-fill,minmax(421px,1fr)); gap: 2rem"
+                 class="w-100">
+
+                <div class="d-flex flex-column gap-2 scroll-down" v-for="data in attractions" @click="openDialog(data)">
+                    <img :src="data.img" alt="" class="rounded " style="height: 421px;">
+                    <div class="d-flex flex-row justify-content-between align-items-center">
+                        <p style="font-size: 20px;max-width: 340px" class="text-truncate m-0">{{data.title}}</p>
+                        <button type="button" class="btn rounded-pill px-4"
+                                style="background-color: var(--blue);color: white" @click.stop="goMap(data.url)">Go Map
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="my-3"></div>
+        </div>
+    </div>
+
+    <div style="color: white;background-color: var(--blue)">
+        <div class="container d-flex flex-column align-items-center">
+            <div class="d-flex flex-row justify-content-between w-100 mt-5 scroll-down">
+                <button type="button" class="btn btn-light" style="visibility: hidden">Watch More</button>
+                <h2 class="fw-bold" id="foods">Foods</h2>
+                <button type="button" class="btn btn-light" @click="foodWatchMore">Watch More</button>
+            </div>
+            <div class="my-4"></div>
+
+            <div class="d-flex flex-row justify-content-between gap-2 scroll-down">
+                <div class="d-flex flex-column gap-2" style="min-width: 50%;">
+                    <img src="img/foods/bubbleMilkTea.webp" alt="" class="rounded">
+                    <div class="d-flex flex-row justify-content-between align-items-center">
+                        <p style="font-size: 20px;max-width: 340px" class="text-truncate m-0">Bubble tea</p>
+                        <button type="button" class="btn rounded-pill px-4"
+                                style="background-color: white;color: var(--blue)"
+                                @click.stop="goMap('https://maps.app.goo.gl/dR73hCag8kopkpDw8')">Go Map
+                        </button>
+                    </div>
+                </div>
+                <p style="letter-spacing: .05rem" class="scroll-down">
+                    Milksha is a well-known Taiwanese bubble tea brand that focuses on natural ingredients and fresh
+                    milk. This particular branch is located in the heart of London, on Shaftesbury Avenue, and serves
+                    popular drinks like classic pearl milk tea, matcha latte, and more. With its chewy white tapioca
+                    pearls and smooth texture, Milksha has become a favorite for both locals and visitors. Below the
+                    featured drink, you can also see iconic Taiwanese dishes such as oyster omelet, beef noodle soup,
+                    and braised pork rice — offering a true taste of Taiwan abroad.
+                </p>
+            </div>
+
+            <div class="home-logo-wrapper scroll-down">
+
+                <div class="clients-grid">
+                    <img v-for="data in foods" :src="data" alt="" class="client-logo rounded" style="height: 150px">
+                </div>
+                <div class="clients-grid">
+                    <img v-for="data in foods" :src="data" alt="" class="client-logo rounded" style="height: 150px">
+                </div>
+                <div class="clients-grid">
+                    <img v-for="data in foods" :src="data" alt="" class="client-logo rounded" style="height: 150px">
+                </div>
+
+            </div>
+
+            <div class="my-3"></div>
+        </div>
+    </div>
+
+    <div style="color: var(--blue);background-color: white">
+        <div class="container d-flex flex-column align-items-center scroll-down">
+            <h2 id="position" class="fw-bold mt-5">Where Are Taiwan and the UK?</h2>
+            <div class="my-4"></div>
+            <img src="img/TW_UK/img.png" alt="">
+            <div class="my-3"></div>
+        </div>
+    </div>
+
+    <div style="background-color: var(--blue)">
+        <div class="d-flex flex-row container align-items-center">
+            <div class="d-flex flex-row align-items-center">
+                <img src="img/TaiwanIcon.png" alt="" width="60">
+                <h2 style="color: white">Taiwan</h2>
+            </div>
+
+            <div class="d-flex flex-column ms-auto gap-2">
+                <p style="color: white" class="m-0">Create by: All Members of UK TVET Study Group A</p>
+                <p style="color: white" class="m-0">E-mail : yyy950911@gmail.com</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" ref="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header d-flex flex-column align-items-center justify-content-center">
+                    <h1>{{detail.title}}</h1>
+                </div>
+
+                <div class="modal-body d-flex flex-column align-items-center">
+                    <img class="rounded" :src="detail.img" alt="">
+                    <div class="my-1"></div>
+                    <p style="letter-spacing: .05rem">{{detail.content}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<script src="plugin/vue.global.js"></script>
+<script src="plugin/jqueryv3.7.1.js"></script>
+<script src="plugin/bootstrap.bundle.min.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
