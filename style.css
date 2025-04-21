@@ -111,3 +111,10 @@ img{
     opacity: 1;
     transform: translateY(0);
 }
+
+.bar{
+    width: 30px;
+    height: 3px;
+    background-color: var(--blue);
+    margin: 2px 0;
+}

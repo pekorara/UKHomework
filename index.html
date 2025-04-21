@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Introducing Taiwan</title>
     <link rel="shortcut icon" href="img/TaiwanIcon.png" type="image/x-icon">
     <link rel="stylesheet" href="plugin/theme.css">
@@ -13,7 +14,7 @@
     <div class="d-flex flex-row align-items-center container py-2 h-100">
         <img src="img/TaiwanIcon.png" alt="" width="30">
         <h1 class="blue fw-bold m-0">Hello UK</h1>
-        <div class="d-flex flex-row gap-4 ms-auto">
+        <div class="d-md-flex flex-row d-none gap-4 ms-auto">
             <button type="button" class="btn-custom"><a href="#buildings" style="text-decoration: none;color: white">Building</a>
             </button>
             <button type="button" class="btn-custom"><a href="#attractions" style="text-decoration: none;color: white">Attractions</a>
@@ -21,6 +22,23 @@
             <button type="button" class="btn-custom"><a href="#foods"style="text-decoration: none;color: white">Foods</a></button>
             <button type="button" class="btn-custom"><a href="#position" style="text-decoration: none;color: white">Position</a>
             </button>
+        </div>
+
+        <div>
+
+        </div>
+
+        <div class="ms-auto d-flex d-md-none flex-column" data-bs-toggle="dropdown">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <div class="dropdown-menu">
+            <a class="dropdown-item fw-bold" href="#buildings" style="text-decoration: none;color: var(--blue)">Building</a>
+            <a class="dropdown-item fw-bold" href="#attractions" style="text-decoration: none;color: var(--blue)">Attractions</a>
+            <a class="dropdown-item fw-bold" href="#foods" style="text-decoration: none;color: var(--blue)">Foods</a>
+            <a class="dropdown-item fw-bold" href="#position" style="text-decoration: none;color: var(--blue)">Position</a>
         </div>
     </div>
 </header>
