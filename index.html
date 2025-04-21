@@ -19,7 +19,7 @@
             </button>
             <button type="button" class="btn-custom"><a href="#attractions" style="text-decoration: none;color: white">Attractions</a>
             </button>
-            <button type="button" class="btn-custom"><a href="#foods"style="text-decoration: none;color: white">Foods</a></button>
+            <button type="button" class="btn-custom"><a href="#foods" style="text-decoration: none;color: white">Foods</a></button>
             <button type="button" class="btn-custom"><a href="#position" style="text-decoration: none;color: white">Position</a>
             </button>
         </div>
@@ -48,12 +48,12 @@
         <div class="container d-flex flex-column align-items-center">
             <h2 class="fw-bold mt-5 scroll-down" id="buildings">Buildings</h2>
             <div class="my-4"></div>
-            <div style="display: grid;grid-template-columns: repeat(auto-fill,minmax(425px,1fr)); gap: 2rem">
+            <div style="display: grid;grid-template-columns: repeat(auto-fill,minmax(300px,1fr)); gap: 2rem">
 
                 <div class="d-flex flex-column gap-2 scroll-down" v-for="data in buildings" @click="openDialog(data)">
-                    <img :src="data.img" alt="" class="rounded" style="min-height: 421px">
+                    <img :src="data.img" alt="" class="rounded" style="min-height: 300px">
                     <div class="d-flex flex-row justify-content-between align-items-center">
-                        <p style="font-size: 20px;max-width: 340px" class="text-truncate m-0">{{data.title}}</p>
+                        <p style="font-size: 20px;max-width: 200px" class="text-truncate m-0">{{data.title}}</p>
                         <button type="button" class="btn btn-light rounded-pill px-4" @click.stop="goMap(data.url)">Go
                             Map
                         </button>
@@ -69,13 +69,13 @@
         <div class="container d-flex flex-column align-items-center">
             <h2 class="fw-bold mt-5 scroll-down" id="attractions">Attractions</h2>
             <div class="my-4"></div>
-            <div style="display: grid;grid-template-columns: repeat(auto-fill,minmax(421px,1fr)); gap: 2rem"
+            <div style="display: grid;grid-template-columns: repeat(auto-fill,minmax(300px,1fr)); gap: 2rem"
                  class="w-100">
 
                 <div class="d-flex flex-column gap-2 scroll-down" v-for="data in attractions" @click="openDialog(data)">
-                    <img :src="data.img" alt="" class="rounded " style="height: 421px;">
+                    <img :src="data.img" alt="" class="rounded " style="height: 300px;">
                     <div class="d-flex flex-row justify-content-between align-items-center">
-                        <p style="font-size: 20px;max-width: 340px" class="text-truncate m-0">{{data.title}}</p>
+                        <p style="font-size: 20px;max-width: 200px" class="text-truncate m-0">{{data.title}}</p>
                         <button type="button" class="btn rounded-pill px-4"
                                 style="background-color: var(--blue);color: white" @click.stop="goMap(data.url)">Go Map
                         </button>
@@ -96,7 +96,7 @@
             </div>
             <div class="my-4"></div>
 
-            <div class="d-flex flex-row justify-content-between gap-2 scroll-down">
+            <div class="d-flex flex-md-row flex-column justify-content-between gap-2 scroll-down">
                 <div class="d-flex flex-column gap-2" style="min-width: 50%;">
                     <img src="img/foods/bubbleMilkTea.webp" alt="" class="rounded">
                     <div class="d-flex flex-row justify-content-between align-items-center">
@@ -145,7 +145,7 @@
     </div>
 
     <div style="background-color: var(--blue)">
-        <div class="d-flex flex-row container align-items-center">
+        <div class="d-flex flex-md-row flex-column container align-items-center">
             <div class="d-flex flex-row align-items-center">
                 <img src="img/TaiwanIcon.png" alt="" width="60">
                 <h2 style="color: white">Taiwan</h2>
