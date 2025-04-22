@@ -86,7 +86,7 @@
         </div>
     </div>
 
-    <div style="color: white;background-color: var(--blue)">
+    <div style="color: white;background-color: var(--blue)" class="d-flex flex-column">
         <div class="container d-flex flex-column align-items-center">
             <div class="d-flex flex-row justify-content-between w-100 mt-5 scroll-down">
                 <button type="button" class="btn btn-light" style="visibility: hidden">Watch More</button>
@@ -115,23 +115,16 @@
                     and braised pork rice — offering a true taste of Taiwan abroad.
                 </p>
             </div>
-
-            <div class="home-logo-wrapper scroll-down">
-
-                <div class="clients-grid">
-                    <img v-for="data in foods" :src="data" alt="" class="client-logo rounded" style="height: 150px">
-                </div>
-                <div class="clients-grid">
-                    <img v-for="data in foods" :src="data" alt="" class="client-logo rounded" style="height: 150px">
-                </div>
-                <div class="clients-grid">
-                    <img v-for="data in foods" :src="data" alt="" class="client-logo rounded" style="height: 150px">
-                </div>
-
-            </div>
-
-            <div class="my-3"></div>
         </div>
+
+        <div class="my-3"></div>
+
+        <div class="clients-grid scroll-down d-flex flex-row">
+            <img v-for="data in foods" :src="data" alt="" class="rounded mx-2" style="height: 150px">
+            <img v-for="data in foods" :src="data" alt="" class="rounded mx-2" style="height: 150px">
+        </div>
+
+        <div class="my-3"></div>
     </div>
 
     <div style="color: var(--blue);background-color: white">
